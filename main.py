@@ -67,17 +67,16 @@ ntptime.settime()
 
 # Iniciacoes para o laco principal
 import weather
-now = time.time()
 clima = None
-atlWeather = now
+atlWeather = time.time() + UTC_OFFSET
 INTERVALO_HORA = 20 # tempo entre atualizacoes da hora
 INTERVALO_WEATHER = 5*60 # tempo entre atualizacoes do clima
 
 # Laco Principal
 while True:
     # Obtem a hora atual
-    now = time.time()
-    agora = time.localtime(now + UTC_OFFSET)
+    now = time.time() + UTC_OFFSET
+    agora = time.localtime(now)
     hora =  "{:02}:{:02}".format(agora[3], agora[4])
 
     # Obtem previsão do tempo
