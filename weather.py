@@ -68,7 +68,8 @@ tabWeather = {
 def decodeWeather(code, ehDia):
     if code in tabWeather:
         fundo = BLUE if ehDia else BLACK
-        return tabWeather[code][ehDia][0], tabWeather[code][ehDia][1], fundo
+        ind = 0 if ehDia else 1
+        return tabWeather[code][ind][0], tabWeather[code][ind][1], fundo
     else:
         return None, 0, 0
     
